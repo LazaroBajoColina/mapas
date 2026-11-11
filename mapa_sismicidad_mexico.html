@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_9be0f3f7322a70ec1c4329ba17444646 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    <h3 align="center" style="font-size:16px; margin:10px 0;"><b>Regionalización Sísmica de México (CFE / CENAPRED)</b></h3>
+    
+<div style="position:fixed; bottom:30px; left:30px; z-index:9999; background:rgba(255,255,255,0.95);
+     padding:12px 15px; border:1px solid #999; border-radius:6px; font-size:12px; line-height:22px; font-family:Arial; box-shadow:0 2px 6px rgba(0,0,0,0.2);">
+  <b>Zonas Sísmicas de México:</b><br>
+  <span style="color:#b71540;">&#9632;</span> <b>Zona D:</b> Severa (Máximo riesgo)<br>
+  <span style="color:#e58e26;">&#9632;</span> <b>Zona C:</b> Alta<br>
+  <span style="color:#f6b93b;">&#9632;</span> <b>Zona B:</b> Moderada<br>
+  <span style="color:#2ed573;">&#9632;</span> <b>Zona A:</b> Baja / Asísmica<br>
+</div>
+    
+            <div class="folium-map" id="map_9be0f3f7322a70ec1c4329ba17444646" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_9be0f3f7322a70ec1c4329ba17444646 = L.map(
+                "map_9be0f3f7322a70ec1c4329ba17444646",
+                {
+                    center: [23.6345, -102.5528],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 5,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_2279b1d78b393bfd8ec48b2603b6a08e = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Tiles \u0026copy; Esri \u0026mdash; USGS, NOAA, NPS",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_2279b1d78b393bfd8ec48b2603b6a08e.addTo(map_9be0f3f7322a70ec1c4329ba17444646);
+        
+    
+            var polygon_b08380063cf34524b5d10938c1776dc1 = L.polygon(
+                [[14.5, -92.2], [15.8, -96.5], [16.8, -99.9], [18.0, -103.0], [19.0, -104.5], [20.5, -105.5], [19.2, -105.8], [17.0, -103.5], [15.5, -100.5], [14.0, -95.0], [13.5, -93.0]],
+                {"bubblingMouseEvents": true, "color": "#b71540", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b71540", "fillOpacity": 0.45, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2.5}
+            ).addTo(map_9be0f3f7322a70ec1c4329ba17444646);
+        
+    
+        var popup_089bef484fe277cbf92bd1e29a8d752a = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_5f50afdf97ac9ec09d188cb74df23da4 = $(`<div id="html_5f50afdf97ac9ec09d188cb74df23da4" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial; width:220px;">         <h4 style="margin:0 0 5px; color:#b71540;">Zona D (Severa)</h4>         <p style="font-size:12px; margin:0; text-align:justify;">Máxima sismicidad y aceleración. Franja costera del Pacífico (Chiapas, Oaxaca, Guerrero, Michoacán, Colima, Jalisco) por subducción de las placas de Cocos y Rivera bajo la Norteamericana.</p>     </div>     </div>`)[0];
+                popup_089bef484fe277cbf92bd1e29a8d752a.setContent(html_5f50afdf97ac9ec09d188cb74df23da4);
+            
+        
+
+        polygon_b08380063cf34524b5d10938c1776dc1.bindPopup(popup_089bef484fe277cbf92bd1e29a8d752a)
+        ;
+
+        
+    
+    
+            polygon_b08380063cf34524b5d10938c1776dc1.bindTooltip(
+                `<div>
+                     Zona D (Severa)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_a601c355b5a0c8a5c59541f552ec37e3 = L.polygon(
+                [[18.5, -96.5], [19.5, -98.0], [19.5, -101.0], [20.8, -104.5], [19.8, -104.5], [18.8, -101.5], [18.0, -97.5]],
+                {"bubblingMouseEvents": true, "color": "#e58e26", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e58e26", "fillOpacity": 0.45, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2.5}
+            ).addTo(map_9be0f3f7322a70ec1c4329ba17444646);
+        
+    
+        var popup_6e685a198b8a3c9580aad9f16cd478a8 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_0c9a08dab0e510816733770e25234b85 = $(`<div id="html_0c9a08dab0e510816733770e25234b85" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial; width:220px;">         <h4 style="margin:0 0 5px; color:#e58e26;">Zona C (Alta)</h4>         <p style="font-size:12px; margin:0; text-align:justify;">Sismicidad intermedia-alta. Eje Volcánico Transversal, Valle de México, Morelos, Puebla y la zona de fallas activas en Mexicali y Baja California (sistema San Andrés-Golfo).</p>     </div>     </div>`)[0];
+                popup_6e685a198b8a3c9580aad9f16cd478a8.setContent(html_0c9a08dab0e510816733770e25234b85);
+            
+        
+
+        polygon_a601c355b5a0c8a5c59541f552ec37e3.bindPopup(popup_6e685a198b8a3c9580aad9f16cd478a8)
+        ;
+
+        
+    
+    
+            polygon_a601c355b5a0c8a5c59541f552ec37e3.bindTooltip(
+                `<div>
+                     Zona C (Alta)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_390fd6f173e659ce064a479d3e481264 = L.polygon(
+                [[22.0, -104.0], [25.0, -104.0], [26.0, -100.0], [23.0, -99.0], [21.0, -100.5]],
+                {"bubblingMouseEvents": true, "color": "#f6b93b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f6b93b", "fillOpacity": 0.45, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2.5}
+            ).addTo(map_9be0f3f7322a70ec1c4329ba17444646);
+        
+    
+        var popup_3f36a5371a28a11299b6e81df7bd1aca = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_f98324889e08d5b7ba13d5396604ac49 = $(`<div id="html_f98324889e08d5b7ba13d5396604ac49" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial; width:220px;">         <h4 style="margin:0 0 5px; color:#f6b93b;">Zona B (Moderada)</h4>         <p style="font-size:12px; margin:0; text-align:justify;">Sismicidad moderada. Altiplano Central, Zacatecas, San Luis Potosí, Sonora, Sinaloa y llanuras costeras del Golfo de México.</p>     </div>     </div>`)[0];
+                popup_3f36a5371a28a11299b6e81df7bd1aca.setContent(html_f98324889e08d5b7ba13d5396604ac49);
+            
+        
+
+        polygon_390fd6f173e659ce064a479d3e481264.bindPopup(popup_3f36a5371a28a11299b6e81df7bd1aca)
+        ;
+
+        
+    
+    
+            polygon_390fd6f173e659ce064a479d3e481264.bindTooltip(
+                `<div>
+                     Zona B (Moderada)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var polygon_6c46e81598352534ee047ac782674137 = L.polygon(
+                [[18.0, -91.5], [21.5, -90.5], [21.5, -87.0], [18.5, -87.5], [18.0, -89.5]],
+                {"bubblingMouseEvents": true, "color": "#2ed573", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ed573", "fillOpacity": 0.45, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2.5}
+            ).addTo(map_9be0f3f7322a70ec1c4329ba17444646);
+        
+    
+        var popup_fa6e002ce1124bd2ec1adf6aff9fbdc9 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_584a373807450c7ed4e73e66127f42ff = $(`<div id="html_584a373807450c7ed4e73e66127f42ff" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial; width:220px;">         <h4 style="margin:0 0 5px; color:#2ed573;">Zona A (Baja / Asísmica)</h4>         <p style="font-size:12px; margin:0; text-align:justify;">Zona con muy baja sismicidad histórica. Península de Yucatán, Tamaulipas, Nuevo León y Coahuila.</p>     </div>     </div>`)[0];
+                popup_fa6e002ce1124bd2ec1adf6aff9fbdc9.setContent(html_584a373807450c7ed4e73e66127f42ff);
+            
+        
+
+        polygon_6c46e81598352534ee047ac782674137.bindPopup(popup_fa6e002ce1124bd2ec1adf6aff9fbdc9)
+        ;
+
+        
+    
+    
+            polygon_6c46e81598352534ee047ac782674137.bindTooltip(
+                `<div>
+                     Zona A (Baja / Asísmica)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>

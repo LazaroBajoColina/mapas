@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_e41bd164a6dbec2f7d2c91eea8462b29 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    <h3 align="center" style="font-size:16px; margin:10px 0;"><b>El Cinturón de Fuego del Pacífico (Ring of Fire)</b></h3>
+    
+            <div class="folium-map" id="map_e41bd164a6dbec2f7d2c91eea8462b29" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_e41bd164a6dbec2f7d2c91eea8462b29 = L.map(
+                "map_e41bd164a6dbec2f7d2c91eea8462b29",
+                {
+                    center: [15.0, 175.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 2,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_e2fba95b625c37e234fb9164078267f7 = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Tiles \u0026copy; Esri \u0026mdash; USGS, NOAA, NPS",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_e2fba95b625c37e234fb9164078267f7.addTo(map_e41bd164a6dbec2f7d2c91eea8462b29);
+        
+    
+            var poly_line_eb5b8a7ab552e7f0b39968d17b38f0fe = L.polyline(
+                [[-53.0, -70.0], [-33.4, -70.6], [-12.0, -77.0], [0.0, -78.5], [10.0, -84.0], [18.0, -103.0], [35.0, -120.0], [50.0, -127.0], [55.0, -160.0], [53.0, 158.0], [40.0, 142.0], [15.0, 120.0], [-5.0, 140.0], [-18.0, 178.0], [-41.0, 174.0]],
+                {"bubblingMouseEvents": true, "color": "#d63031", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#d63031", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_e41bd164a6dbec2f7d2c91eea8462b29);
+        
+    
+            poly_line_eb5b8a7ab552e7f0b39968d17b38f0fe.bindTooltip(
+                `<div>
+                     Arco principal del Cinturón de Fuego
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3c8487497845589a00555b9dc3e70a87 = L.circleMarker(
+                [11.35, 142.2],
+                {"bubblingMouseEvents": true, "color": "#800000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff4757", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_e41bd164a6dbec2f7d2c91eea8462b29);
+        
+    
+        var popup_3adf28675fc7f67e94cf07c08b944452 = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_0be226ba5d246ea0581d53c190391eb1 = $(`<div id="html_0be226ba5d246ea0581d53c190391eb1" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial; width:210px;">         <h4 style="margin:0 0 4px; color:#c0392b;">Fosa de las Marianas (Abismo Challenger)</h4>         <b>Tipo:</b> Fosa Oceánica (-10,994 m)<br>         <p style="font-size:12px; margin:5px 0 0;">Punto más profundo de la corteza terrestre por subducción.</p>     </div>     </div>`)[0];
+                popup_3adf28675fc7f67e94cf07c08b944452.setContent(html_0be226ba5d246ea0581d53c190391eb1);
+            
+        
+
+        circle_marker_3c8487497845589a00555b9dc3e70a87.bindPopup(popup_3adf28675fc7f67e94cf07c08b944452)
+        ;
+
+        
+    
+    
+            circle_marker_3c8487497845589a00555b9dc3e70a87.bindTooltip(
+                `<div>
+                     Fosa de las Marianas (Abismo Challenger)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5480b219b077755364344737b031757f = L.circleMarker(
+                [35.36, 138.72],
+                {"bubblingMouseEvents": true, "color": "#800000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff4757", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_e41bd164a6dbec2f7d2c91eea8462b29);
+        
+    
+        var popup_f48996003d3f3bb1d330d6993f5f50e7 = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_7d33f40993916f93898c70c38e027988 = $(`<div id="html_7d33f40993916f93898c70c38e027988" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial; width:210px;">         <h4 style="margin:0 0 4px; color:#c0392b;">Monte Fuji</h4>         <b>Tipo:</b> Estratovolcán activo<br>         <p style="font-size:12px; margin:5px 0 0;">Símbolo de Japón situado sobre la unión triple de placas.</p>     </div>     </div>`)[0];
+                popup_f48996003d3f3bb1d330d6993f5f50e7.setContent(html_7d33f40993916f93898c70c38e027988);
+            
+        
+
+        circle_marker_5480b219b077755364344737b031757f.bindPopup(popup_f48996003d3f3bb1d330d6993f5f50e7)
+        ;
+
+        
+    
+    
+            circle_marker_5480b219b077755364344737b031757f.bindTooltip(
+                `<div>
+                     Monte Fuji
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a7179df386aeb015a185021034be2aa6 = L.circleMarker(
+                [-6.1, 105.42],
+                {"bubblingMouseEvents": true, "color": "#800000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff4757", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_e41bd164a6dbec2f7d2c91eea8462b29);
+        
+    
+        var popup_0b408c46b091dfac7b7b3b70f83e073f = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_a9a97d20a3a03a3e1d75ed7964867445 = $(`<div id="html_a9a97d20a3a03a3e1d75ed7964867445" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial; width:210px;">         <h4 style="margin:0 0 4px; color:#c0392b;">Krakatoa</h4>         <b>Tipo:</b> Caldera volcánica<br>         <p style="font-size:12px; margin:5px 0 0;">Famoso por su colosal explosión y tsunami en 1883.</p>     </div>     </div>`)[0];
+                popup_0b408c46b091dfac7b7b3b70f83e073f.setContent(html_a9a97d20a3a03a3e1d75ed7964867445);
+            
+        
+
+        circle_marker_a7179df386aeb015a185021034be2aa6.bindPopup(popup_0b408c46b091dfac7b7b3b70f83e073f)
+        ;
+
+        
+    
+    
+            circle_marker_a7179df386aeb015a185021034be2aa6.bindTooltip(
+                `<div>
+                     Krakatoa
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1f0c09819ed60e836f2770f8a2a7eef9 = L.circleMarker(
+                [19.02, -98.62],
+                {"bubblingMouseEvents": true, "color": "#800000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff4757", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_e41bd164a6dbec2f7d2c91eea8462b29);
+        
+    
+        var popup_bb32fa3cd032c25d67acf4b7fca41fc1 = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_04bebd4b4f2716835a4e2b8eb9451ac7 = $(`<div id="html_04bebd4b4f2716835a4e2b8eb9451ac7" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial; width:210px;">         <h4 style="margin:0 0 4px; color:#c0392b;">Popocatépetl</h4>         <b>Tipo:</b> Estratovolcán activo<br>         <p style="font-size:12px; margin:5px 0 0;">Segundo volcán más alto de México, en constante monitoreo.</p>     </div>     </div>`)[0];
+                popup_bb32fa3cd032c25d67acf4b7fca41fc1.setContent(html_04bebd4b4f2716835a4e2b8eb9451ac7);
+            
+        
+
+        circle_marker_1f0c09819ed60e836f2770f8a2a7eef9.bindPopup(popup_bb32fa3cd032c25d67acf4b7fca41fc1)
+        ;
+
+        
+    
+    
+            circle_marker_1f0c09819ed60e836f2770f8a2a7eef9.bindTooltip(
+                `<div>
+                     Popocatépetl
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4fa024a55967b161ec7e2f0d60915837 = L.circleMarker(
+                [46.2, -122.19],
+                {"bubblingMouseEvents": true, "color": "#800000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff4757", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_e41bd164a6dbec2f7d2c91eea8462b29);
+        
+    
+        var popup_1a27c5404266d1e301f0e46b2c09f897 = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_5b591c9058af218b4d7af77f7fccc321 = $(`<div id="html_5b591c9058af218b4d7af77f7fccc321" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial; width:210px;">         <h4 style="margin:0 0 4px; color:#c0392b;">Monte Santa Helena</h4>         <b>Tipo:</b> Estratovolcán<br>         <p style="font-size:12px; margin:5px 0 0;">Erupción catastrófica y colapso de ladera en 1980.</p>     </div>     </div>`)[0];
+                popup_1a27c5404266d1e301f0e46b2c09f897.setContent(html_5b591c9058af218b4d7af77f7fccc321);
+            
+        
+
+        circle_marker_4fa024a55967b161ec7e2f0d60915837.bindPopup(popup_1a27c5404266d1e301f0e46b2c09f897)
+        ;
+
+        
+    
+    
+            circle_marker_4fa024a55967b161ec7e2f0d60915837.bindTooltip(
+                `<div>
+                     Monte Santa Helena
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3535492477c7b055eea70bf9b600bc6e = L.circleMarker(
+                [-39.42, -71.93],
+                {"bubblingMouseEvents": true, "color": "#800000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff4757", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_e41bd164a6dbec2f7d2c91eea8462b29);
+        
+    
+        var popup_ee4cb4ecde2f381a9149f90987d6e690 = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_90f5f084c8b0c1a3ee46a36ac8f7a1f5 = $(`<div id="html_90f5f084c8b0c1a3ee46a36ac8f7a1f5" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial; width:210px;">         <h4 style="margin:0 0 4px; color:#c0392b;">Villarrica</h4>         <b>Tipo:</b> Volcán activo<br>         <p style="font-size:12px; margin:5px 0 0;">Uno de los volcanes más activos de Sudamérica con lago de lava.</p>     </div>     </div>`)[0];
+                popup_ee4cb4ecde2f381a9149f90987d6e690.setContent(html_90f5f084c8b0c1a3ee46a36ac8f7a1f5);
+            
+        
+
+        circle_marker_3535492477c7b055eea70bf9b600bc6e.bindPopup(popup_ee4cb4ecde2f381a9149f90987d6e690)
+        ;
+
+        
+    
+    
+            circle_marker_3535492477c7b055eea70bf9b600bc6e.bindTooltip(
+                `<div>
+                     Villarrica
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_67ae1a51bdfa6f6119ee82fa423bbd3d = L.circleMarker(
+                [-39.28, 175.56],
+                {"bubblingMouseEvents": true, "color": "#800000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff4757", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_e41bd164a6dbec2f7d2c91eea8462b29);
+        
+    
+        var popup_23de7df15cfe7f5cb9de7a856b66b2ea = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_79e50ebb5595712d6c7cd4a3739cfd81 = $(`<div id="html_79e50ebb5595712d6c7cd4a3739cfd81" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial; width:210px;">         <h4 style="margin:0 0 4px; color:#c0392b;">Ruapehu</h4>         <b>Tipo:</b> Estratovolcán<br>         <p style="font-size:12px; margin:5px 0 0;">El volcán activo más grande de Nueva Zelanda.</p>     </div>     </div>`)[0];
+                popup_23de7df15cfe7f5cb9de7a856b66b2ea.setContent(html_79e50ebb5595712d6c7cd4a3739cfd81);
+            
+        
+
+        circle_marker_67ae1a51bdfa6f6119ee82fa423bbd3d.bindPopup(popup_23de7df15cfe7f5cb9de7a856b66b2ea)
+        ;
+
+        
+    
+    
+            circle_marker_67ae1a51bdfa6f6119ee82fa423bbd3d.bindTooltip(
+                `<div>
+                     Ruapehu
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>

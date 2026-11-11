@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_7f63c4aaa7015cfae499d78e9fcdccca {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    <h3 align="center" style="font-size:16px; margin:10px 0;"><b>Principales Ríos de México</b></h3>
+    
+            <div class="folium-map" id="map_7f63c4aaa7015cfae499d78e9fcdccca" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_7f63c4aaa7015cfae499d78e9fcdccca = L.map(
+                "map_7f63c4aaa7015cfae499d78e9fcdccca",
+                {
+                    center: [23.6345, -102.5528],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 5,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_2ccd70e1aad23bc1997304d0dea6ce3e = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Tiles \u0026copy; Esri \u0026mdash; USGS, NOAA, NPS",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_2ccd70e1aad23bc1997304d0dea6ce3e.addTo(map_7f63c4aaa7015cfae499d78e9fcdccca);
+        
+    
+            var poly_line_cc9bd0f5353b96cd9d12081cfd857ce3 = L.polyline(
+                [[31.78, -106.52], [29.9, -102.5], [29.3, -100.9], [27.5, -99.5], [26.0, -97.8], [25.95, -97.14]],
+                {"bubblingMouseEvents": true, "color": "#0984e3", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#0984e3", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.9, "smoothFactor": 1.0, "stroke": true, "weight": 4.5}
+            ).addTo(map_7f63c4aaa7015cfae499d78e9fcdccca);
+        
+    
+        var popup_2d1c11cad10e33a147b496724ce2be51 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_4109d3a46b1f520c27e8b7af987c4943 = $(`<div id="html_4109d3a46b1f520c27e8b7af987c4943" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial; width:220px;">         <h4 style="margin:0 0 5px; color:#0984e3;">Río Bravo (Río Grande)</h4>         <b>Vertiente:</b> Golfo de México<br>         <b>Longitud:</b> 3,034 km (frontera norte)<br>         <p style="font-size:12px; margin:5px 0 0; text-align:justify;">Frontera natural entre México y Estados Unidos; abastece distritos de riego clave en Coahuila, Nuevo León y Tamaulipas.</p>     </div>     </div>`)[0];
+                popup_2d1c11cad10e33a147b496724ce2be51.setContent(html_4109d3a46b1f520c27e8b7af987c4943);
+            
+        
+
+        poly_line_cc9bd0f5353b96cd9d12081cfd857ce3.bindPopup(popup_2d1c11cad10e33a147b496724ce2be51)
+        ;
+
+        
+    
+    
+            poly_line_cc9bd0f5353b96cd9d12081cfd857ce3.bindTooltip(
+                `<div>
+                     Río Bravo (Río Grande)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_09007591680914ab39d496cfaddb721e = L.polyline(
+                [[19.25, -99.55], [20.0, -100.0], [20.3, -101.5], [20.3, -102.8], [21.0, -103.5], [21.8, -105.2]],
+                {"bubblingMouseEvents": true, "color": "#00b894", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#00b894", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.9, "smoothFactor": 1.0, "stroke": true, "weight": 4.5}
+            ).addTo(map_7f63c4aaa7015cfae499d78e9fcdccca);
+        
+    
+        var popup_e44631e7b59c3b5f002c58766661c8a5 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_a89192699b3290fd98f9733a15028656 = $(`<div id="html_a89192699b3290fd98f9733a15028656" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial; width:220px;">         <h4 style="margin:0 0 5px; color:#00b894;">Río Lerma - Santiago</h4>         <b>Vertiente:</b> Océano Pacífico (vía Lago de Chapala)<br>         <b>Longitud:</b> 1,270 km (sistema conjunto)<br>         <p style="font-size:12px; margin:5px 0 0; text-align:justify;">Cruza el centro industrial de México; vital para abastecimiento urbano, agricultura y plantas hidroeléctricas en Nayarit.</p>     </div>     </div>`)[0];
+                popup_e44631e7b59c3b5f002c58766661c8a5.setContent(html_a89192699b3290fd98f9733a15028656);
+            
+        
+
+        poly_line_09007591680914ab39d496cfaddb721e.bindPopup(popup_e44631e7b59c3b5f002c58766661c8a5)
+        ;
+
+        
+    
+    
+            poly_line_09007591680914ab39d496cfaddb721e.bindTooltip(
+                `<div>
+                     Río Lerma - Santiago
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_00e5999f9561755ec660e821786813f2 = L.polyline(
+                [[18.5, -98.5], [17.9, -99.5], [18.1, -101.0], [18.2, -101.9], [17.95, -102.18]],
+                {"bubblingMouseEvents": true, "color": "#d63031", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#d63031", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.9, "smoothFactor": 1.0, "stroke": true, "weight": 4.5}
+            ).addTo(map_7f63c4aaa7015cfae499d78e9fcdccca);
+        
+    
+        var popup_f0f702f7b6e0e2887aecd79df2a4123d = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_a791fc3a117fa0bca3e403c879717bd0 = $(`<div id="html_a791fc3a117fa0bca3e403c879717bd0" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial; width:220px;">         <h4 style="margin:0 0 5px; color:#d63031;">Río Balsas</h4>         <b>Vertiente:</b> Océano Pacífico<br>         <b>Longitud:</b> 770 km<br>         <p style="font-size:12px; margin:5px 0 0; text-align:justify;">Drena la depresión del Balsas (Guerrero y Michoacán). Alberga complejos hidroeléctricos como El Infiernillo.</p>     </div>     </div>`)[0];
+                popup_f0f702f7b6e0e2887aecd79df2a4123d.setContent(html_a791fc3a117fa0bca3e403c879717bd0);
+            
+        
+
+        poly_line_00e5999f9561755ec660e821786813f2.bindPopup(popup_f0f702f7b6e0e2887aecd79df2a4123d)
+        ;
+
+        
+    
+    
+            poly_line_00e5999f9561755ec660e821786813f2.bindTooltip(
+                `<div>
+                     Río Balsas
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_ae6fb8d646ccc6fe04f31e4980b57c21 = L.polyline(
+                [[16.0, -90.9], [16.8, -91.0], [17.2, -91.4], [17.7, -91.8], [18.4, -92.6]],
+                {"bubblingMouseEvents": true, "color": "#e17055", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#e17055", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.9, "smoothFactor": 1.0, "stroke": true, "weight": 4.5}
+            ).addTo(map_7f63c4aaa7015cfae499d78e9fcdccca);
+        
+    
+        var popup_858855d5647cf328eca602199219b653 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_567b1025033cc951747b246f0a438c5d = $(`<div id="html_567b1025033cc951747b246f0a438c5d" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial; width:220px;">         <h4 style="margin:0 0 5px; color:#e17055;">Río Usumacinta</h4>         <b>Vertiente:</b> Golfo de México<br>         <b>Longitud:</b> 1,114 km<br>         <p style="font-size:12px; margin:5px 0 0; text-align:justify;">El río más caudaloso de México y Centroamérica. Sirve de frontera con Guatemala y desemboca en los Pantanos de Centla.</p>     </div>     </div>`)[0];
+                popup_858855d5647cf328eca602199219b653.setContent(html_567b1025033cc951747b246f0a438c5d);
+            
+        
+
+        poly_line_ae6fb8d646ccc6fe04f31e4980b57c21.bindPopup(popup_858855d5647cf328eca602199219b653)
+        ;
+
+        
+    
+    
+            poly_line_ae6fb8d646ccc6fe04f31e4980b57c21.bindTooltip(
+                `<div>
+                     Río Usumacinta
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_4bbee1072219d8b243b13c73164194c2 = L.polyline(
+                [[15.5, -92.0], [16.5, -93.1], [17.0, -93.2], [17.8, -93.3], [18.4, -92.6]],
+                {"bubblingMouseEvents": true, "color": "#6c5ce7", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#6c5ce7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.9, "smoothFactor": 1.0, "stroke": true, "weight": 4.5}
+            ).addTo(map_7f63c4aaa7015cfae499d78e9fcdccca);
+        
+    
+        var popup_862b92354f797a8365df3d1c13980e02 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_537d8787021c605e63303b834d2ef597 = $(`<div id="html_537d8787021c605e63303b834d2ef597" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial; width:220px;">         <h4 style="margin:0 0 5px; color:#6c5ce7;">Río Grijalva</h4>         <b>Vertiente:</b> Golfo de México<br>         <b>Longitud:</b> 600 km<br>         <p style="font-size:12px; margin:5px 0 0; text-align:justify;">Pasa por el Cañón del Sumidero y genera más del 40% de la energía hidroeléctrica del país (presas Malpaso, Chicoasén, Angostura).</p>     </div>     </div>`)[0];
+                popup_862b92354f797a8365df3d1c13980e02.setContent(html_537d8787021c605e63303b834d2ef597);
+            
+        
+
+        poly_line_4bbee1072219d8b243b13c73164194c2.bindPopup(popup_862b92354f797a8365df3d1c13980e02)
+        ;
+
+        
+    
+    
+            poly_line_4bbee1072219d8b243b13c73164194c2.bindTooltip(
+                `<div>
+                     Río Grijalva
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_09f9ce9d290c59b2276a2a947e455330 = L.polyline(
+                [[20.5, -99.0], [21.3, -98.8], [22.0, -98.4], [22.25, -97.8]],
+                {"bubblingMouseEvents": true, "color": "#fdcb6e", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#fdcb6e", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.9, "smoothFactor": 1.0, "stroke": true, "weight": 4.5}
+            ).addTo(map_7f63c4aaa7015cfae499d78e9fcdccca);
+        
+    
+        var popup_a49293d9dbdc2a770eff6a60f4475303 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_793135eb07d47f4ae574611bfe697b50 = $(`<div id="html_793135eb07d47f4ae574611bfe697b50" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial; width:220px;">         <h4 style="margin:0 0 5px; color:#fdcb6e;">Río Pánuco</h4>         <b>Vertiente:</b> Golfo de México<br>         <b>Longitud:</b> 510 km<br>         <p style="font-size:12px; margin:5px 0 0; text-align:justify;">Drena cuencas de Hidalgo, San Luis Potosí y Veracruz; desemboca en el puerto comercial de Tampico.</p>     </div>     </div>`)[0];
+                popup_a49293d9dbdc2a770eff6a60f4475303.setContent(html_793135eb07d47f4ae574611bfe697b50);
+            
+        
+
+        poly_line_09f9ce9d290c59b2276a2a947e455330.bindPopup(popup_a49293d9dbdc2a770eff6a60f4475303)
+        ;
+
+        
+    
+    
+            poly_line_09f9ce9d290c59b2276a2a947e455330.bindTooltip(
+                `<div>
+                     Río Pánuco
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_7aa78f9ce4c8c377064e34e04a0d57f5 = L.polyline(
+                [[30.0, -109.5], [29.0, -109.7], [28.2, -110.0], [27.6, -110.6]],
+                {"bubblingMouseEvents": true, "color": "#00cec9", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#00cec9", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.9, "smoothFactor": 1.0, "stroke": true, "weight": 4.5}
+            ).addTo(map_7f63c4aaa7015cfae499d78e9fcdccca);
+        
+    
+        var popup_c3bf4ce4a45a7520331da4d275b1eb61 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_923c36ad46cf905d0e8e516acc69385a = $(`<div id="html_923c36ad46cf905d0e8e516acc69385a" style="width: 100.0%; height: 100.0%;">     <div style="font-family:Arial; width:220px;">         <h4 style="margin:0 0 5px; color:#00cec9;">Río Yaqui</h4>         <b>Vertiente:</b> Golfo de California<br>         <b>Longitud:</b> 410 km<br>         <p style="font-size:12px; margin:5px 0 0; text-align:justify;">Río estratégico para el desarrollo agrícola de Sonora (Valle del Yaqui) y la presa La Angostura.</p>     </div>     </div>`)[0];
+                popup_c3bf4ce4a45a7520331da4d275b1eb61.setContent(html_923c36ad46cf905d0e8e516acc69385a);
+            
+        
+
+        poly_line_7aa78f9ce4c8c377064e34e04a0d57f5.bindPopup(popup_c3bf4ce4a45a7520331da4d275b1eb61)
+        ;
+
+        
+    
+    
+            poly_line_7aa78f9ce4c8c377064e34e04a0d57f5.bindTooltip(
+                `<div>
+                     Río Yaqui
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>
